@@ -2,24 +2,47 @@ package streetsimulator;
 
 public class Pedestrian extends StreetUser {
 
+    public Pedestrian(int x, int y) {
+        locationX = x;
+        locationY = y;
+        speed = 1;
+        sign = '^';
+
+    }
+
     @Override
     public int getLocationX() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return locationX;
     }
 
     @Override
     public int getLocationY() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return locationY;
     }
 
     @Override
     public int getSpeed() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return speed;
     }
 
     @Override
     public char getSign() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return sign;
+    }
+
+    @Override
+    public String toString() {
+        return "" + sign;
+    }
+
+    @Override
+    public void setLocationX(int x) {
+        locationX = x;
+    }
+
+    @Override
+    public void setLocationY(int y) {
+        locationY = y;
     }
 
 }
