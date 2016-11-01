@@ -4,21 +4,29 @@ public class DecoratorCar extends DecoratorVehicle {
     
     Pedestrian pedestrian;
     
-     public DecoratorCar() {
+    /* public DecoratorCar() {
         locationX = 0;
         locationY = 0;
         speed = 5;
         sign = '$';
     }
-     
+     */
+
+    DecoratorCar(Pedestrian pedestrian) {
+        this.pedestrian = pedestrian;     
+        speed = 5;
+        sign = '$';
+    }
+    
+    
     @Override
     public int getLocationX() {
-        return locationX;
+        return pedestrian.getLocationX();
     }
 
     @Override
     public int getLocationY() {
-        return locationY;
+        return pedestrian.getLocationY();
     }
 
     @Override
@@ -38,12 +46,12 @@ public class DecoratorCar extends DecoratorVehicle {
 
    @Override
     public void setLocationX(int x) {
-        locationX = x;
+        pedestrian.setLocationX(x);
     }
 
     @Override
     public void setLocationY(int y) {
-        locationY = y;
+        pedestrian.setLocationY(y);
     }
     
 
