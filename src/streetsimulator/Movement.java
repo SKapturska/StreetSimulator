@@ -1,6 +1,5 @@
 package streetsimulator;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
@@ -42,7 +41,7 @@ public class Movement {
             for (StreetUser su2 : listSU) {
                 if (su.getLocationX() == su2.getLocationX() && su.getLocationY() == su2.getLocationY() && su != su2) {
                     isCrashed = true;
-                    board[su.getLocationX()][su.getLocationY()] = 'X';
+
                 }
             }
         }
@@ -118,85 +117,115 @@ public class Movement {
                     if (cord - su.getSpeed() > 0) {
                         isOk = true;
                         su.setLocationY(cord - su.getSpeed());
-                        //if (board[su.locationX][su.getLocationY()] != ' ') {
-                            if (su instanceof Pedestrian) {
-                               if(board[su.getLocationX()][su.getLocationY()] == 'c'){
-                                   listSU.set(listSU.indexOf(su), new DecoratorCar((Pedestrian)su));
-                               }else if(board[su.getLocationX()][su.getLocationY()] == 'b'){
-                                   listSU.set(listSU.indexOf(su), new DecoratorBike((Pedestrian)su));  
-                               }
 
+                        if (su instanceof Pedestrian) {
+                            if (board[su.getLocationX()][su.getLocationY()] == 'c') {
+                                listSU.set(listSU.indexOf(su), new DecoratorCar((Pedestrian) su));
+                            } else if (board[su.getLocationX()][su.getLocationY()] == 'b') {
+                                listSU.set(listSU.indexOf(su), new DecoratorBike((Pedestrian) su));
                             }
-                            if (su instanceof DecoratorCar || su instanceof DecoratorBike) {
-                                bum = true;
-                                board[su.getLocationX()][su.getLocationY()] = 'X';
-                                    
-                            }
-                        //}
+
+                        }
+                        if (su instanceof DecoratorCar || su instanceof DecoratorBike) {
+                            bum = true;
+
+                        }
+
                     }
                 } else if (direction == 1) {       //dol
                     cord = su.getLocationY();
                     if (cord + su.getSpeed() < board[0].length) {
                         isOk = true;
                         su.setLocationY(cord + su.getSpeed());
-                        //if (board[su.locationX][su.getLocationY()] != ' ') {
-                            if (su instanceof Pedestrian) {
-                               if(board[su.getLocationX()][su.getLocationY()] == 'c'){
-                                   listSU.set(listSU.indexOf(su), new DecoratorCar((Pedestrian)su));
-                               }else if(board[su.getLocationX()][su.getLocationY()] == 'b'){
-                                   listSU.set(listSU.indexOf(su), new DecoratorBike((Pedestrian)su));  
-                               }
 
+                        if (su instanceof Pedestrian) {
+                            if (board[su.getLocationX()][su.getLocationY()] == 'c') {
+                                listSU.set(listSU.indexOf(su), new DecoratorCar((Pedestrian) su));
+                            } else if (board[su.getLocationX()][su.getLocationY()] == 'b') {
+                                listSU.set(listSU.indexOf(su), new DecoratorBike((Pedestrian) su));
                             }
-                            if (su instanceof DecoratorCar || su instanceof DecoratorBike) {
-                                bum = true;
-                                board[su.getLocationX()][su.getLocationY()] = 'X'; 
-                            }
-                        //}
-                        
+
+                        }
+                        if (su instanceof DecoratorCar || su instanceof DecoratorBike) {
+                            bum = true;
+
+                        }
+
                     }
                 } else if (direction == 2) {       //prawo
                     cord = su.getLocationX();
                     if (cord + su.getSpeed() < board.length) {
                         isOk = true;
                         su.setLocationX(cord + su.getSpeed());
-                        //if (board[su.locationX][su.getLocationY()] != ' ') {
-                            if (su instanceof Pedestrian) {
-                               if(board[su.getLocationX()][su.getLocationY()] == 'c'){
-                                   listSU.set(listSU.indexOf(su), new DecoratorCar((Pedestrian)su));
-                               }else if(board[su.getLocationX()][su.getLocationY()] == 'b'){
-                                   listSU.set(listSU.indexOf(su), new DecoratorBike((Pedestrian)su));  
-                               }
 
+                        if (su instanceof Pedestrian) {
+                            if (board[su.getLocationX()][su.getLocationY()] == 'c') {
+                                listSU.set(listSU.indexOf(su), new DecoratorCar((Pedestrian) su));
+                            } else if (board[su.getLocationX()][su.getLocationY()] == 'b') {
+                                listSU.set(listSU.indexOf(su), new DecoratorBike((Pedestrian) su));
                             }
-                            if (su instanceof DecoratorCar || su instanceof DecoratorBike) {
-                                bum = true;
-                                board[su.getLocationX()][su.getLocationY()] = 'X';   
-                            }
-                        //}
+
+                        }
+                        if (su instanceof DecoratorCar || su instanceof DecoratorBike) {
+                            bum = true;
+
+                        }
+
                     }
                 } else if (direction == 3) {       //lewo
                     cord = su.getLocationX();
                     if (cord - su.getSpeed() > 0) {
                         isOk = true;
                         su.setLocationX(cord - su.getSpeed());
-                        //if (board[su.locationX][su.getLocationY()] != ' ') {
-                            if (su instanceof Pedestrian) {
-                               if(board[su.getLocationX()][su.getLocationY()] == 'c'){
-                                   listSU.set(listSU.indexOf(su), new DecoratorCar((Pedestrian)su));
-                               }else if(board[su.getLocationX()][su.getLocationY()] == 'b'){
-                                   listSU.set(listSU.indexOf(su), new DecoratorBike((Pedestrian)su));  
-                               }
 
+                        if (su instanceof Pedestrian) {
+                            if (board[su.getLocationX()][su.getLocationY()] == 'c') {
+                                listSU.set(listSU.indexOf(su), new DecoratorCar((Pedestrian) su));
+                            } else if (board[su.getLocationX()][su.getLocationY()] == 'b') {
+                                listSU.set(listSU.indexOf(su), new DecoratorBike((Pedestrian) su));
                             }
-                            if (su instanceof DecoratorCar || su instanceof DecoratorBike) {
-                                bum = true;
-                                board[su.getLocationX()][su.getLocationY()] = 'X';    
-                            }
-                        //}
+
+                        }
+                        if (su instanceof DecoratorCar || su instanceof DecoratorBike) {
+                            bum = true;
+
+                        }
+
                     }
                 }
             } while (!isOk);
+        }
+    }
+
+    private void off() {
+        Random r = new Random();
+        for (StreetUser su : listSU) {
+            if (r.nextInt(4) == 0) {
+                if (su instanceof DecoratorBike) {
+                    listSU.set(listSU.indexOf(su), ((DecoratorBike) su).getOff());
+                    board[su.getLocationX()][su.getLocationY()] = 'b';
+                } else if (su instanceof DecoratorCar) {
+                    listSU.set(listSU.indexOf(su), ((DecoratorCar) su).getOff());
+                    board[su.getLocationX()][su.getLocationY()] = 'c';
+                }
+                if (su.getLocationX() > 0 && board[su.getLocationX() - 1][su.getLocationY()] == ' ') {
+                    su.setLocationX(su.getLocationX() - 1);
+                    su.setLocationY(su.getLocationY());
+                } else if (su.getLocationX() < board.length - 1 && board[su.getLocationX() + 1][su.getLocationY()] == ' ') {
+                    su.setLocationX(su.getLocationX() + 1);
+                    su.setLocationY(su.getLocationY());
+                } else if (su.getLocationY() > 0 && board[su.getLocationX()][su.getLocationY() - 1] == ' ') {
+                    su.setLocationX(su.getLocationX());
+                    su.setLocationY(su.getLocationY() - 1);
+                } else if (su.getLocationY() < board[0].length - 1 && board[su.getLocationX()][su.getLocationY() + 1] == ' ') {
+                    su.setLocationX(su.getLocationX());
+                    su.setLocationY(su.getLocationY() + 1);
+                } else {
+                    bum = true;
+
+                }
+
+            }
         }
     }
 
@@ -218,13 +247,15 @@ public class Movement {
             addToBoard();
             showStreet();
             move();
-            if(bum == false){
+            off();
+
+
+            if (bum == false) {
                 bum = crash();
             }
             sc.nextLine();
         } while (!bum);
-        System.out.println("---------------------------------------------");
-        showStreet();
+
 
     }
 

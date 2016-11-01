@@ -3,14 +3,7 @@ package streetsimulator;
 public class DecoratorCar extends DecoratorVehicle {
     
     Pedestrian pedestrian;
-    
-    /* public DecoratorCar() {
-        locationX = 0;
-        locationY = 0;
-        speed = 5;
-        sign = '$';
-    }
-     */
+
 
     DecoratorCar(Pedestrian pedestrian) {
         this.pedestrian = pedestrian;     
@@ -52,6 +45,12 @@ public class DecoratorCar extends DecoratorVehicle {
     @Override
     public void setLocationY(int y) {
         pedestrian.setLocationY(y);
+    }
+
+    @Override
+    public Pedestrian getOff() {
+        return pedestrian;
+          
     }
     
 
